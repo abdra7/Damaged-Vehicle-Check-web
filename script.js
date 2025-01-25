@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const featureItems = document.querySelectorAll('.feature-item');
     const uploadImage = document.getElementById('uploadImage');
     const imagePreview = document.getElementById('imagePreview');
+    const servicesPage = document.getElementById('servicesPage');
+    const searchBox = document.getElementById('searchBox');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+
 
     let chosenTime = null;
 
@@ -269,3 +273,36 @@ if (cancelUpload) {
         document.getElementById('description').value = '';
     });
 }
+// Debugging: Log all pages
+console.log('All pages:', pages);
+
+function showPage(pageId) {
+    console.log(`Attempting to show page: ${pageId}`); // Debugging
+    pages.forEach(page => {
+        page.classList.add('hidden');
+    });
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        console.log(`Found target page: ${pageId}`); // Debugging
+        targetPage.classList.remove('hidden');
+    } else {
+        console.error(`Page not found: ${pageId}`); // Debugging
+    }
+}
+
+// Show the home page by default
+showPage('homePage');
+
+// Toggle menu
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
+// Navigation logic
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const pageId = item.getAttribute('data-page');
+        showPage(pageId); // Show the selected page
+        menu.classList.add('hidden'); // Hide the menu
+    });
+});
