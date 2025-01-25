@@ -1,92 +1,73 @@
 body, html {
     font-family: "Segoe UI", Arial, sans-serif;
-    margin:0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f9;
-    min-height: 100%; /* Ensure the body fills the viewport */
+    min-height: 100%;
     display: flex;
-    flex-direction: column; /* Enable flex layout for proper footer placement */
+    flex-direction: column;
 }
-/* Page Container */
+
 #appContainer {
-    flex: 1; /* Make the main content area expand to fill available space */
+    flex: 1;
 }
 
- 
-
-#signUpModal{
-
+#signUpModal {
     backdrop-filter: blur(10px);
-    display: flex;
-    padding: 120px 20px 20px 20px  ;
-    display: none;
-
-
-
+    padding: 120px 20px 20px 20px;
 }
 
-#feature-box{
+.hidden {
+    display: none;
+}
+
+#feature-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #6a0dad;
     color: white;
     padding: 10px 50px;
-
-
-
-
 }
 
-/* image logo */
-.logoimage{
-
-justify-content: space-between;
-align-items: center;
-position: relative;
-  left:  380px;
-  bottom: 20px;
-
-
-
-
+.logoimage {
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: 380px;
+    bottom: 20px;
 }
 
-
-/* Header Styles */
 .header {
     justify-content: space-between;
     align-items: center;
-    border-radius: 50px 50px 50px 50px;
-    margin:15px 15px 0px 15px ;
+    border-radius: 50px;
+    margin: 15px 15px 0 15px;
     background-color: #6a0dad;
     color: white;
     padding: 10px 20px;
     display: flex;
-
 }
 
 .header .logo h1 {
     margin: 0;
     position: relative;
-    top:35px;
+    top: 35px;
 }
 
 .header nav {
     position: relative;
 }
 
-/* Menu Styles */
 #menuButton {
     font-size: 20px;
     background: none;
     border: none;
-    color: rgb(253, 251, 251);
+    color: white;
     cursor: pointer;
 }
 
 #menu {
-    display: none;
     background: rgb(17, 16, 16);
     list-style: none;
     padding: 10px 0;
@@ -108,20 +89,10 @@ position: relative;
     background-color: #6a0dad;
 }
 
-
-/* Page Container */
 .page {
     padding: 20px;
 }
-.page.active {
-    display: block;
-}
-/* Hidden Class */
-.hidden {
-    display: none;
-}
 
-/* Forms */
 form {
     max-width: 400px;
     margin: 20px auto;
@@ -167,7 +138,6 @@ button:hover {
     background-color: #5a0a9a;
 }
 
-/* Appointment Page */
 #appointmentTimes {
     list-style: none;
     padding: 0;
@@ -200,7 +170,6 @@ button:hover {
     pointer-events: none;
 }
 
-/* Confirmation Message */
 #confirmationMessage {
     margin: 20px 0;
     padding: 15px;
@@ -208,17 +177,14 @@ button:hover {
     color: #155724;
     border: 1px solid #c3e6cb;
     border-radius: 5px;
-    display: none;
 }
 
-.Welcome{
+.Welcome {
     justify-content: center;
     display: flex;
-    position: relative ;
+    position: relative;
 }
 
-
-/* Feature List */
 .feature-list {
     display: flex;
     flex-wrap: wrap;
@@ -226,12 +192,11 @@ button:hover {
     gap: 33px;
     position: relative;
     top: 50px;
-
 }
 
 .feature-box {
     width: 200px;
-    height: 200px; /* Set a fixed height to make all boxes the same size */
+    height: 200px;
     padding: 9px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -242,7 +207,7 @@ button:hover {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure consistent spacing between content */
+    justify-content: space-between;
 }
 
 .feature-box:hover {
@@ -252,8 +217,8 @@ button:hover {
 
 .feature-image {
     width: 100%;
-    height: 120px; /* Set a fixed height for the images */
-    object-fit: contain; /* Maintain aspect ratio of images */
+    height: 120px;
+    object-fit: contain;
     margin-bottom: 50px;
     border-radius: 5px;
 }
@@ -262,16 +227,14 @@ button:hover {
     margin: 10px 0 0;
     font-size: 18px;
     color: #333;
-    flex-grow: 1; /* Ensure the title is spaced properly */
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Center text vertically */
+    align-items: center;
     justify-content: center;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
 
-/* Modal Styling */
 .modal {
-    display: none;
     position: fixed;
     z-index: 20;
     left: 0;
@@ -316,4 +279,3 @@ button:hover {
 .modal-close:hover {
     color: #6a0dad;
 }
-

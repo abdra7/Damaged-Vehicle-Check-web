@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const pages = document.querySelectorAll('.page'); // All pages
-    const menuItems = document.querySelectorAll('#menu li'); // Menu items
-    const menuButton = document.getElementById('menuButton'); // Menu toggle button
-    const menu = document.getElementById('menu'); // Menu container
-    const appointmentButton = document.getElementById('goToUserManagement'); // "Book Appointment" button
+    const pages = document.querySelectorAll('.page');
+    const menuItems = document.querySelectorAll('#menu li');
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+    const appointmentButton = document.getElementById('goToUserManagement');
     const backToHomeButton = document.getElementById('backToHome');
     const appointmentTimes = document.getElementById('appointmentTimes');
     const submitButton = document.getElementById('submitAppointment');
@@ -18,62 +18,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeSelect = document.getElementById('theme');
     const addNotificationButton = document.getElementById('addNotification');
     const notificationList = document.getElementById('notificationList');
-
-    // Sign-Up Modal Elements
     const signUpModal = document.getElementById('signUpModal');
     const openSignUpModal = document.getElementById('openSignUpModal');
     const closeSignUpModal = document.getElementById('closeSignUpModal');
     const signUpForm = document.getElementById('signUpForm');
+    const loginForm = document.getElementById('loginForm');
+    const uploadForm = document.getElementById('uploadForm');
+    const adminEntries = document.getElementById('adminEntries');
+    const cancelUpload = document.getElementById('cancelUpload');
+    const featureItems = document.querySelectorAll('.feature-item');
 
-    let chosenTime = null; // Variable to hold the selected appointment time
+    let chosenTime = null;
 
-    /**
-     * Helper function to show a specific page and hide all other pages.
-     * @param {string} pageId - The ID of the page to show.
-     */
     function showPage(pageId) {
         pages.forEach(page => {
             page.classList.add('hidden');
+            page.classList.remove('active');
         });
         const targetPage = document.getElementById(pageId);
         if (targetPage) {
             targetPage.classList.remove('hidden');
+            targetPage.classList.add('active');
         }
     }
 
-    // Show the login page by default
     showPage('homePage');
 
-    // Toggle Menu
     menuButton.addEventListener('click', () => {
         menu.classList.toggle('hidden');
-    });
-
-    menuButton.addEventListener('click', () => {
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     });
 
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
             const pageId = item.getAttribute('data-page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-                if (page.id === pageId) {
-                    page.classList.add('active');
-                }
-            });
-            menu.style.display = 'none';
+            showPage(pageId);
+            menu.classList.add('hidden');
         });
     });
-    // Show available appointment times when clicking on "Book Appointment"
+
     if (appointmentButton) {
         appointmentButton.addEventListener('click', () => {
             showAppointmentTimes();
+            showPage('bookAppointmentPage');
         });
     }
 
     function showAppointmentTimes() {
-        appointmentTimes.innerHTML = ''; // Clear previous times
+        appointmentTimes.innerHTML = '';
         chosenTime = null;
         confirmationMessage.classList.add('hidden');
 
@@ -101,11 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             appointmentTimes.appendChild(listItem);
         }
-
-        showPage('bookAppointmentPage');
     }
 
-    // Back to Home Page
     if (backToHomeButton) {
         backToHomeButton.addEventListener('click', () => {
             showPage('homePage');
@@ -132,19 +120,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Login Form
-    const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Login successful!');
-            showPage('homePage');
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert('Login successful!');
+                showPage('homePage');
+            } else {
+                alert('Please fill in all fields.');
+            }
         });
     }
 
-    // Upload Form
-    const uploadForm = document.getElementById('uploadForm');
-    const adminEntries = document.getElementById('adminEntries');
     if (uploadForm) {
         uploadForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -168,8 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cancel Upload
-    const cancelUpload = document.getElementById('cancelUpload');
     if (cancelUpload) {
         cancelUpload.addEventListener('click', () => {
             if (uploadForm) uploadForm.reset();
@@ -177,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // User Management Functionality
     if (userForm) {
         userForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -190,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Reporting Tools
     if (generateReportButton) {
         generateReportButton.addEventListener('click', () => {
             reportOutput.classList.remove('hidden');
@@ -198,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Settings Functionality
     if (settingsForm) {
         settingsForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -208,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Notifications
     if (addNotificationButton) {
         addNotificationButton.addEventListener('click', () => {
             const li = document.createElement('li');
@@ -217,22 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Sign-Up Modal
     if (openSignUpModal) {
         openSignUpModal.addEventListener('click', () => {
-            signUpModal.style.display = 'block';
+            signUpModal.classList.remove('hidden');
         });
     }
 
     if (closeSignUpModal) {
         closeSignUpModal.addEventListener('click', () => {
-            signUpModal.style.display = 'none';
+            signUpModal.classList.add('hidden');
         });
     }
 
     window.addEventListener('click', (event) => {
         if (event.target === signUpModal) {
-            signUpModal.style.display = 'none';
+            signUpModal.classList.add('hidden');
         }
     });
 
@@ -245,11 +228,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (username && email && password) {
                 alert(`Account created for ${username}`);
-                signUpModal.style.display = 'none';
+                signUpModal.classList.add('hidden');
                 signUpForm.reset();
             } else {
                 alert('Please fill in all fields.');
             }
         });
     }
+
+    featureItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetPage = item.id.replace('goTo', '').toLowerCase() + 'Page';
+            showPage(targetPage);
+        });
+    });
 });
