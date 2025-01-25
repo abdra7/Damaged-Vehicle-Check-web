@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const adminEntries = document.getElementById('adminEntries');
     const cancelUpload = document.getElementById('cancelUpload');
     const featureItems = document.querySelectorAll('.feature-item');
+    const uploadImage = document.getElementById('uploadImage');
+    const imagePreview = document.getElementById('imagePreview');
 
     let chosenTime = null;
 
@@ -243,3 +245,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+if (uploadImage) {
+    uploadImage.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                imagePreview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.innerHTML = `<p>No image selected</p>`;
+        }
+    });
+}
+
+const cancelUpload = document.getElementById('cancelUpload');
+if (cancelUpload) {
+    cancelUpload.addEventListener('click', () => {
+        uploadImage.value = '';
+        imagePreview.innerHTML = `<p>No image selected</p>`;
+        document.getElementById('description').value = '';
+    });
+}
