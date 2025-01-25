@@ -183,18 +183,29 @@
 </section>
 
 <!-- Upload Page -->
-<section id="uploadPage" class="page hidden">
-    <h2>Upload Photo</h2>
-    <form id="uploadForm">
-        <label for="uploadImage">Upload Image</label>
-        <input type="file" id="uploadImage" accept="image/*" required>
-        
-        <label for="description">Description</label>
-        <textarea id="description" placeholder="Enter description"></textarea>
-
-        <button type="submit">Submit</button>
-        <button type="button" id="cancelUpload">Cancel</button>
-    </form>
+<section id="uploadPage" class="page">
+    <div class="upload-container">
+        <h2>Upload Photo</h2>
+        <form id="uploadForm" class="upload-form">
+            <div class="upload-box">
+                <label for="uploadImage" class="upload-label">
+                    <span>Choose Image</span>
+                    <input type="file" id="uploadImage" accept="image/*" required>
+                </label>
+                <div id="imagePreview" class="image-preview">
+                    <p>No image selected</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Enter a description for the image"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Upload</button>
+                <button type="button" id="cancelUpload" class="btn-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
 </section>
 
 <!-- Admin Page -->
