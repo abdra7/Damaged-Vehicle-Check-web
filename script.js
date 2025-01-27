@@ -289,10 +289,6 @@ function showPage(pageId) {
         console.error(`Page not found: ${pageId}`); // Debugging
     }
 }
-
-// Show the home page by default
-showPage('homePage');
-
 // Toggle menu
 menuButton.addEventListener('click', () => {
     menu.classList.toggle('hidden');

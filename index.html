@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Damaged Vehicle Check</title>
     <link rel="icon" type="image/png" sizes="32x32" href="imge/logo.png">
     <!-- Alternate formats (optional) -->
@@ -43,7 +44,7 @@
         <input type="password" id="password" placeholder="Enter your password" required>
 
         <button type="submit">Login</button>
-        <p>Don't have an account? <button id="openSignUpModal" class="link-button">Sign Up</button></p>
+        <p>Don't have an account? <button id="openSignUpModal"  class="btn btn-primary">Sign Up</button></p>
     </form>
 </section>
 
@@ -62,7 +63,7 @@
             <label for="signUpPassword">Password</label>
             <input type="password" id="signUpPassword" placeholder="Enter your password" required>
             
-            <button type="submit">Sign Up</button>
+            <button type="submit"  class="btn btn-primary">Sign Up</button>
         </form>
     </div>
 </div>
@@ -151,7 +152,7 @@
 </section>
 
 <!-- Settings and Preferences Page -->
-<section id="servicesPage" class="page ">
+<section id="servicesPage" class="page hidden ">
     <div class="services-container">
         <h2>Mechanic Services</h2>
         <ul class="services-list">
@@ -187,7 +188,7 @@
 </section>
 
 <!-- Upload Page -->
-<section id="uploadPage" class="page">
+<section id="uploadPage" class="page hidden">
     <div class="upload-container">
         <h2>Upload Photo</h2>
         <form id="uploadForm" class="upload-form">
@@ -230,7 +231,6 @@
     </table>
 </section>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
