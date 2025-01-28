@@ -20,15 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Register</h1>
+<?php include 'header.php'; ?>
+   
+ <div>
+    
+     <h1>Register</h1>
     <form method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" required>
@@ -39,8 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="password">Password:</label>
         <input type="password" name="password" required>
         <br>
+        <br>
+        <br>
         <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.php">Login here</a>.</p>
-</body>
-</html>
+        <br> <br> 
+        <p>Already have an account? <a href="login.php">Login here</a>.</p>
+       </form>
+
+
+ </div>
+
+
+
+    <?php include 'footer.php'; ?>
