@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <?php include 'header.php'; ?>
    
-    <main><link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <div class="login-container">
         <h1>Login</h1>
         <form method="POST">
@@ -35,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required placeholder="Enter your password">
-
+            <br><br><br>
             <button type="submit">Login</button>
-        </form>
+            <br><br>
         <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </div></main>
-
+        </form>
+    </div>
 
 <?php include 'footer.php'; ?>
