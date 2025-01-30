@@ -7,54 +7,10 @@ include 'db_connections.php';
 // تضمين الهيدر
 include 'header.php';
 ?>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-    main {
-        width: 80%;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-    h1, h2 {
-        color: #333;
-        text-align: center;
-    }
-    .container {
-        text-align: center;
-    }
-    .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .image-box {
-        background: #fff;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    img {
-        max-width: 300px;
-        max-height: 300px;
-        border-radius: 5px;
-    }
-    hr {
-        margin: 20px 0;
-    }
-</style>
-
 <main>
+
+
+
     <h1>Reports and Bookings</h1>
     <p>Welcome to your dashboard. Here you can view your reports and bookings.</p>
 
