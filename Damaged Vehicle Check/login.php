@@ -25,11 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <?php include 'header.php'; ?>
-   
-    <link rel="stylesheet" href="style.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+     <br><br><br>
     <div class="login-container">
-        <h1>Login</h1>
         <form method="POST">
+        <h1>Login</h1>
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required placeholder="Enter your email">
 
@@ -41,5 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p>Don't have an account? <a href="register.php">Register here</a>.</p>
         </form>
     </div>
-
+    </body>
+    </html>
 <?php include 'footer.php'; ?>

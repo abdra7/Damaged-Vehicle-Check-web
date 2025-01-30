@@ -21,11 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php include 'header.php'; ?>
-   
- <div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-     <h1>Register</h1>
+</head>
+<body>
+     <br><br>
+ <div>
     <form method="POST">
+    <h1>Register</h1>
         <label for="name">Name:</label>
         <input type="text" name="name" required>
         <br>
@@ -41,10 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br> <br> 
         <p>Already have an account? <a href="login.php">Login here</a>.</p>
        </form>
-
-
  </div>
-
+ </body>
+ </html>
 
 
     <?php include 'footer.php'; ?>
