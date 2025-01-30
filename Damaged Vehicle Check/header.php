@@ -17,6 +17,7 @@
                 <li><a href="booking.php">Booking</a></li>
                 <li><a href="workshops.php">Workshops</a></li>
                 <li><a href="user_dashboard.php">reports</a></li>
+                <li><a href="ratings.php">ratings</a></li>
             </ul>
         </nav>
     </header>
