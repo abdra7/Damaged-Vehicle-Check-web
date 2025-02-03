@@ -798,7 +798,7 @@ hr {
 
 .report-status.resolved { background: var(--color-primary-lighter); color: var(--color-primary-dark); }
 .report-status.pending { background: #fff3cd; color: #856404; }
-.report-status.urgent { background: #f8d7da; color: #721c24; }
+.report-status.rejected { background: #f8d7da; color: #721c24; }
 
 .damage-severity {
     display: flex;
